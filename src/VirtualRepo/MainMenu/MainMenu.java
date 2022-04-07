@@ -1,7 +1,6 @@
 package VirtualRepo.MainMenu;
 
 import VirtualRepo.OperationMenu.OperationMenu;
-
 import java.io.File;
 import java.util.Scanner;
 
@@ -13,20 +12,20 @@ public class MainMenu implements MainMenuOptions {
         while(true){
             System.out.println("Please Select an option:");
             System.out.println("1. Add file\n2. Delete File\n3. Search file\n4. Go back to main menu");
-            int option = sc.nextInt();
+            String option = sc.nextLine();
             OperationMenu op = new OperationMenu();
 
             switch(option){
-                case 1:
+                case "1":
                     op.addFile();
                     break;
-                case 2:
+                case "2":
                     op.deleteFile();
                     break;
-                case 3:
+                case "3":
                     op.searchFile();
                     break;
-                case 4:
+                case "4":
                     return;
                 default:
                     System.out.println("Incorrect Option! Please select from given list");
@@ -37,14 +36,16 @@ public class MainMenu implements MainMenuOptions {
 
     @Override
     public void showfiles() {
-
-        String pathName = "D:\\Training\\My JAVA\\Virtual key for Repo\\src\\repo";
+        String pathName = "D:\\Training\\My JAVA\\Virtual key for Repo\\src\\Repo";
 
         File[] files = new File(pathName).listFiles();
-
-        for (File file : files) {
-            if (file.isFile()) {
-                System.out.println(file.getName());
+        if(files == null){
+            System.out.println("Empty Directory");
+        }else{
+            for (File file : files) {
+                if (file.isFile()) {
+                    System.out.println(file.getName());
+                }
             }
         }
     }

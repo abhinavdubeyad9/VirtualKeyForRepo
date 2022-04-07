@@ -27,7 +27,9 @@ public class OperationMenu implements OperationMenuOptions {
 
     @Override
     public void searchFile() {
-        System.out.println("searchfile is underConstuction");
+        System.out.println("Enter the file name you want to search: ");
+        String fileName = input.nextLine();
+        FileOp.searchFile(fileName);
     }
 
 }

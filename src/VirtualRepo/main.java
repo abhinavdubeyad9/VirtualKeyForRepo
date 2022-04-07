@@ -13,16 +13,16 @@ public class main {
         while(flag){
             System.out.println("Please select an option :");
             System.out.println("1. View files\n2. Do Operation on file\n3. Exit");
-            int option = sc.nextInt();
+            String option = sc.nextLine();
             MainMenu menu = new MainMenu();
             switch(option){
-                case 1:
+                case "1":
                     menu.showfiles();
                     break;
-                case 2:
+                case "2":
                     menu.getOperationMenu();
                     break;
-                case 3:
+                case "3":
                     flag = false;
                     break;
                 default:
