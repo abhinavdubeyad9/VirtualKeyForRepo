@@ -12,6 +12,7 @@ public class MainMenu implements MainMenuOptions {
         while(true){
             System.out.println("Please Select an option:");
             System.out.println("1. Add file\n2. Delete File\n3. Search file\n4. Go back to main menu");
+            System.out.print("Please enter your choice: ");
             String option = sc.nextLine();
             OperationMenu op = new OperationMenu();
 
